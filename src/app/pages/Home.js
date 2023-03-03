@@ -73,25 +73,25 @@ const Home = () => {
             <div className="p-2 text-lg font-bold">
                 <p>Score: {wonCards.length}</p>
             </div>
-            <div className="flex flex-col">
-                <div className="bg-black absolute items-center justify-center w-[100%] h-screen opacity-70" style={{
+            <div className="flex flex-col justify-center items-center">
+                <div className="absolute items-center justify-center w-[100%] h-screen opacity-70" style={{
                     display: isOpen
                 }} >
                     <div className="bg-slate-400  text-lg flex flex-col justify-center items-center h-[20%] w-[70%]">
-                        <p className="text-3xl text-red-600"><b>Game Over</b></p>
+                        <p className="text-3xl text-red-600"><b>You Lose</b></p>
                         <br />
                         <button className="border-2 px-5 py-2 bg-black" onClick={() => {
                             setOpenState("none")
-                        }}>close</button>
+                        }}>Restart</button>
                     </div>
                 </div>
-                <ul className="h-screen overflow-scroll flex items-center justify-center  border-2 border-gray-100 w-full flex-wrap">
+                <ul className="h-screen overflow-scroll flex items-center justify-center border-2 border-gray-100 w-[80%] flex-wrap md:inline-grid gap-1 grid-cols-2 ">
                     {cardList.map((card, index) => {
                         return (
                             <li
                                 key={index}
                                 id={index}
-                                className="m-5 w-[250px] h-[300px] flex justify-center items-center border-2 border-gray-100"
+                                className="place-self-center m-5 w-[250px] h-[300px] flex justify-center items-center border-2 border-gray-100"
                                 style={{
                                     backgroundColor: card.color,
                                     borderRadius: '15px'
@@ -99,11 +99,9 @@ const Home = () => {
                                 onClick={() => {
                                     handleToggleCardList(card.id);
                                 }}
-                                value={card.id}
                             >
                                 {/* <img src="src/assets/f1.jpg" alt="shuffledImage" /> */}
                                 <p>{card.task}</p>
-                                <p>{card.count}</p>
                             </li>
                         );
                     })}
