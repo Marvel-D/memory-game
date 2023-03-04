@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Array from "../../database/cards.js";
-import Nav from "../shared/NavBar.js";
 
 const Home = () => {
     let [cardList, setCardList] = useState(Array);
-    let [modalState, setModalState] = useState("hidden");
     let [isOpen, setOpenState] = useState("none")
     let [wonCards, setWonCards] = useState([]);
 

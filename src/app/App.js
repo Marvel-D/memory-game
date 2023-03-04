@@ -14,6 +14,9 @@ const App = () => {
         <Route path="/" element={<Home />}> </Route>
         {/* <Route path="/profile" element={<Profile />} /> */}
       </Routes>
+      <footer className="font-extrabold flex justify-center items-center py-5  bg-red-900">
+        Build by Marvel
+      </footer>
     </div>
   );
 };
